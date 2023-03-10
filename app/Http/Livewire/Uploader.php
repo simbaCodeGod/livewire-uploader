@@ -11,9 +11,23 @@ class Uploader extends Component
 
     public $files = [];
 
+    protected function rules()
+    {
+        return [
+            'files.*' => ['required', 'file', 'max:2000', 'mimes:png,jpg']
+        ];
+    }
+
+    protected function validationAttributes()
+    {
+        return [
+            'files.*' => 'files'
+        ];
+    }
+
     public function updatedFiles($files)
     {
-        dd($files);
+        $this->validateOnly('files.*');
     }
 
     public function render()

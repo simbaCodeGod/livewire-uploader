@@ -43,7 +43,9 @@
                 <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
             </div>
         </div>
-        <p class="mt-2 text-red-500 text-sm">Some validation error</p>
+
+        @error('files.*')<p class="mt-2 text-red-500 text-sm">{{ $message }}</p>@enderror
+        
 
         <div class="mt-6 space-y-3">
             <div class="space-y-2">
