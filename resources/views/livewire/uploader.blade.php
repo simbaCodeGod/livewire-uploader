@@ -1,7 +1,10 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg"
     x-data=" {
-        handleDrop () {
-            
+        handleDrop (event) {
+            @this.uploadMultiple(
+                'files',
+                Array.from(event.target)
+            )
         }
     }"
 >
