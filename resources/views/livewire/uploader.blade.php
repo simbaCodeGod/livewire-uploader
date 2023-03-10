@@ -1,7 +1,7 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" x-data=" {
 
     dropping:false,
-    
+
      handleDrop(event) {
          @this.uploadMultiple(
              'files',
@@ -10,11 +10,14 @@
      }
  }">
 
-    <span x-text="dropping"></span>
     <div class="p-6 text-gray-900">
         <div 
             x-on:dragover.prevent="dropping = true"
             x-on:dragleave.prevent="dropping = false"
+            x-bind:class="{
+                'border-gray-300': !dropping,
+                'border-gray-400': dropping,
+            }"
 
             class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-md">
             <div class="space-y-1 text-center">
