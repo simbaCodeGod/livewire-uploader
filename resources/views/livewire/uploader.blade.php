@@ -1,4 +1,10 @@
-<div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+<div class="bg-white overflow-hidden shadow-sm sm:rounded-lg"
+    x-data=" {
+        handleDrop () {
+            
+        }
+    }"
+>
     <div class="p-6 text-gray-900">
         <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-md">
             <div class="space-y-1 text-center">
