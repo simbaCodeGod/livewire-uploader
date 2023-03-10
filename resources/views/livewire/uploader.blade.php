@@ -1,15 +1,22 @@
-<div class="bg-white overflow-hidden shadow-sm sm:rounded-lg"
-    x-data=" {
-        handleDrop (event) {
-            @this.uploadMultiple(
-                'files',
-                Array.from(event.target)
-            )
-        }
-    }"
->
+<div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" x-data=" {
+
+    dropping:false,
+    
+     handleDrop(event) {
+         @this.uploadMultiple(
+             'files',
+             Array.from(event.target)
+         )
+     }
+ }">
+
+    <span x-text="dropping"></span>
     <div class="p-6 text-gray-900">
-        <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-md">
+        <div 
+            x-on:dragover.prevent="dropping = true"
+            x-on:dragleave.prevent="dropping = false"
+
+            class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-md">
             <div class="space-y-1 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="mx-auto w-12 h-12 text-gray-400 ">
