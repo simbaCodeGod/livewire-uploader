@@ -14,6 +14,8 @@
         <div 
             x-on:dragover.prevent="dropping = true"
             x-on:dragleave.prevent="dropping = false"
+            x-on:drop="dropping = false"
+            x-on:drop.prevent="handleDrop($event)"
             x-bind:class="{
                 'border-gray-300': !dropping,
                 'border-gray-400': dropping,
