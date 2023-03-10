@@ -11,6 +11,11 @@ class Uploader extends Component
 
     public $files = [];
 
+    public function updatedFiles($files)
+    {
+        dd($files);
+    }
+
     public function render()
     {
         return view('livewire.uploader');
