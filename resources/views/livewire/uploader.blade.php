@@ -1,14 +1,16 @@
-<div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" x-data=" {
+<div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" 
+    x-data=" {
 
     dropping:false,
 
      handleDrop(event) {
          @this.uploadMultiple(
              'files',
-             Array.from(event.dataTransfer?.files ||event.target)
+             Array.from(event.dataTransfer?.files ||event.target.files)
          )
      }
- }">
+ }"
+ >
 
     <div class="p-6 text-gray-900">
         <div 
